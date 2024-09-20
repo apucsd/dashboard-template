@@ -1,0 +1,53 @@
+/* For every menu item */
+.ant-menu-item {
+  color: #5c5c5c !important;
+  height: 48px !important;
+  margin-top: 10px !important;
+  border-radius: 100px 10px 10px 100px !important;
+}
+
+/* For dropdown menu */
+.ant-menu-submenu-title {
+  color: #5c5c5c !important;
+  height: 48px !important;
+  margin-top: 10px !important;
+  border-radius: 100px 10px 10px 100px !important;
+}
+
+/* Selected item background color */
+.ant-menu-item-selected {
+  background-color: #2461cb !important; /* Main item selected */
+  color: white !important; /* Change text color if needed */
+}
+
+/* Submenu item selected background color */
+.ant-menu-submenu .ant-menu-item-selected {
+  background-color: #adadad !important; /* Submenu item selected */
+  color: white !important; /* Change text color if needed */
+}
+
+/* Hover effect for submenu title */
+.ant-menu-submenu-title:hover {
+  background-color: #f0f0f0 !important; /* Example hover color for submenu titles */
+}
+
+/* Hover state */
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  color: #5c5c5c !important; /* Default hover color */
+}
+
+/* Optional: Hover effect for selected item */
+.ant-menu-item-selected:hover {
+  background-color: #2461cb !important; /* Keep the selected color */
+  color: white !important; /* Change text color if needed */
+}
+
+/* Optional: Hover effect for submenu item */
+.ant-menu-submenu .ant-menu-item:hover {
+  background-color: #f0f0f0 !important; /* Hover color for submenu items */
+}
+
+.ant-menu-sub {
+  background-color: transparent !important;
+}
