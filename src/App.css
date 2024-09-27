@@ -45,7 +45,7 @@
 
 /* Optional: Hover effect for submenu item */
 .ant-menu-submenu .ant-menu-item:hover {
-  background-color: #f0f0f0 !important; /* Hover color for submenu items */
+  background-color: #adadad !important; /* Hover color for submenu items */
 }
 
 .ant-menu-sub {
