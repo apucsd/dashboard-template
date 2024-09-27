@@ -1,5 +1,5 @@
 import { BsTrash } from "react-icons/bs";
-import { ConfigProvider, Flex, Input, Table } from "antd";
+import { ConfigProvider, Flex, Input, Popconfirm, Table } from "antd";
 import Title from "antd/es/typography/Title";
 import { dummyData } from "../../constant/constant";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -35,15 +35,14 @@ const UserManagement = () => {
       width: 150,
       textAlign: "center",
       render: () => (
-        <button
-          style={{
-            cursor: "pointer",
-
-            color: "red",
-          }}
+        <Popconfirm
+          title="Delete User"
+          description="Are you sure to delete this task?"
         >
-          <BsTrash size={20} />
-        </button>
+          <button>
+            <BsTrash className="text-red-600" size={20} />
+          </button>
+        </Popconfirm>
       ),
     },
   ];
