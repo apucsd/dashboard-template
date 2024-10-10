@@ -4,21 +4,8 @@ import Title from 'antd/es/typography/Title';
 const Notification = () => {
     return (
         <div className="mt-5">
-            <div
-                style={{
-                    background: 'white',
-                    padding: '20px',
-                    borderRadius: '12px',
-                }}
-            >
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        margin: '16px 0',
-                    }}
-                >
+            <div className="bg-white p-5 rounded-xl">
+                <div className="flex items-center justify-between my-4">
                     <div>
                         <Title
                             style={{
@@ -29,7 +16,7 @@ const Notification = () => {
                             Notification
                         </Title>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <div className="flex items-center gap-4">
                         <Button
                             style={{
                                 height: '40px',
@@ -49,357 +36,25 @@ const Notification = () => {
                     </div>
                 </div>
                 <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            margin: '16px 0',
-                            alignItems: 'center',
-                            background: '#E9EFFA',
-                            height: '80px',
-                            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)',
-                            padding: '16px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    display: 'flex',
-                                    gap: '40px',
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: '600',
-                                        color: '#555555',
-                                    }}
-                                >
-                                    A new order has arrived
-                                </span>
-                                <span
-                                    style={{
-                                        fontSize: 14,
-                                        fontWeight: '400',
-                                        color: '#A7A7A7',
-                                    }}
-                                >
-                                    8:00am, today
-                                </span>
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    fontWeight: '400',
-                                    color: '#818181',
-                                }}
-                            >
-                                Babaji salon , order date 10 jun, 2024.
-                            </p>
-                        </div>
-                        <div
-                            style={{
-                                padding: '0px 20px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 16,
-                                    color: '#2461CB',
-                                }}
-                            >
-                                View
-                            </p>
-                        </div>
-                    </div>
+                    {[1, 1, 1, 1, 1].map((_item: any, index: number) => {
+                        return (
+                            <div key={index} className="w-full mx-auto p-4 my-4 bg-primary/10  min-h-20  shadow-md">
+                                <div className=" text-sm">
+                                    <div className="flex items-center gap-5">
+                                        <p className="font-semibold text-[#555555]">A new lesson has booked</p>
+                                        <div className="flex justify-between items-center gap-5 text-[#A7A7A7]">
+                                            <span className="text-xs ">04-06-2024</span>
+                                            <span className="text-xs ">10:00 AM</span>
+                                        </div>
+                                    </div>
 
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            margin: '16px 0',
-                            alignItems: 'center',
-                            background: 'white',
-                            height: '80px',
-                            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)',
-                            padding: '16px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    display: 'flex',
-                                    gap: '40px',
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: '600',
-                                        color: '#555555',
-                                    }}
-                                >
-                                    A new order has arrived
-                                </span>
-                                <span
-                                    style={{
-                                        fontSize: 14,
-                                        fontWeight: '400',
-                                        color: '#A7A7A7',
-                                    }}
-                                >
-                                    8:00am, today
-                                </span>
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    fontWeight: '400',
-                                    color: '#818181',
-                                }}
-                            >
-                                Babaji salon , order date 10 jun, 2024.
-                            </p>
-                        </div>
-                        <div
-                            style={{
-                                padding: '0px 20px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 16,
-                                    color: '#2461CB',
-                                }}
-                            >
-                                View
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            margin: '16px 0',
-                            alignItems: 'center',
-                            background: 'white',
-                            height: '80px',
-                            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)',
-                            padding: '16px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    display: 'flex',
-                                    gap: '40px',
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: '600',
-                                        color: '#555555',
-                                    }}
-                                >
-                                    A new order has arrived
-                                </span>
-                                <span
-                                    style={{
-                                        fontSize: 14,
-                                        fontWeight: '400',
-                                        color: '#A7A7A7',
-                                    }}
-                                >
-                                    8:00am, today
-                                </span>
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    fontWeight: '400',
-                                    color: '#818181',
-                                }}
-                            >
-                                Babaji salon , order date 10 jun, 2024.
-                            </p>
-                        </div>
-                        <div
-                            style={{
-                                padding: '0px 20px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 16,
-                                    color: '#2461CB',
-                                }}
-                            >
-                                View
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            margin: '16px 0',
-                            alignItems: 'center',
-                            background: 'white',
-                            height: '80px',
-                            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)',
-                            padding: '16px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    display: 'flex',
-                                    gap: '40px',
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: '600',
-                                        color: '#555555',
-                                    }}
-                                >
-                                    A new order has arrived
-                                </span>
-                                <span
-                                    style={{
-                                        fontSize: 14,
-                                        fontWeight: '400',
-                                        color: '#A7A7A7',
-                                    }}
-                                >
-                                    8:00am, today
-                                </span>
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    fontWeight: '400',
-                                    color: '#818181',
-                                }}
-                            >
-                                Babaji salon , order date 10 jun, 2024.
-                            </p>
-                        </div>
-                        <div
-                            style={{
-                                padding: '0px 20px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 16,
-                                    color: '#2461CB',
-                                }}
-                            >
-                                View
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            margin: '16px 0',
-                            alignItems: 'center',
-                            background: 'white',
-                            height: '80px',
-                            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.10)',
-                            padding: '16px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    display: 'flex',
-                                    gap: '40px',
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontSize: 16,
-                                        fontWeight: '600',
-                                        color: '#555555',
-                                    }}
-                                >
-                                    A new order has arrived
-                                </span>
-                                <span
-                                    style={{
-                                        fontSize: 14,
-                                        fontWeight: '400',
-                                        color: '#A7A7A7',
-                                    }}
-                                >
-                                    8:00am, today
-                                </span>
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    fontWeight: '400',
-                                    color: '#818181',
-                                }}
-                            >
-                                Babaji salon , order date 10 jun, 2024.
-                            </p>
-                        </div>
-                        <div
-                            style={{
-                                padding: '0px 20px',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 16,
-                                    color: '#2461CB',
-                                }}
-                            >
-                                View
-                            </p>
-                        </div>
-                    </div>
+                                    <div className="mt-2">
+                                        <p className="text-sm text-[#818181]">Christopher Nolan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { dummyData } from '../../constant/constant';
 import CustomModal from '../../components/shared/CustomModal';
 import { useState } from 'react';
 import { IoSaveSharp } from 'react-icons/io5';
+import PrimaryButton from '../../components/shared/PrimaryButton';
 
 const MakeAdmin = () => {
     const [makeAdminModal, setMakeAdminModal] = useState(false);
@@ -84,17 +85,13 @@ const MakeAdmin = () => {
             <Form.Item>
                 <div className="flex justify-center w-full">
                     <Button
-                        htmlType="submit"
+                        type="primary"
                         style={{
-                            backgroundColor: '#2461CB',
-                            height: '40px',
-                            borderRadius: 8,
+                            height: 40,
                             width: '100%',
                         }}
-                        type="primary"
-                        icon={<IoSaveSharp />}
                     >
-                        Make Admin
+                        Add Admin
                     </Button>
                 </div>
             </Form.Item>
@@ -105,14 +102,9 @@ const MakeAdmin = () => {
         <div>
             <Flex vertical={false} gap={10} align="center" justify="space-between">
                 <div>
-                    <Title
-                        style={{
-                            color: '#2461CB',
-                        }}
-                        level={2}
-                    >
-                        Add Admin
-                    </Title>
+                    <div className="my-4">
+                        <h1 className="text-3xl text-primary font-semibold">Admin Management</h1>
+                    </div>
                 </div>
 
                 <div
@@ -122,14 +114,10 @@ const MakeAdmin = () => {
                 >
                     <Button
                         onClick={() => setMakeAdminModal(true)}
-                        style={{
-                            backgroundColor: '#2461CB',
-
-                            height: '40px',
-                            borderRadius: 8,
-                        }}
                         type="primary"
-                        icon={<PlusOutlined />}
+                        style={{
+                            height: 40,
+                        }}
                     >
                         Add Admin
                     </Button>
