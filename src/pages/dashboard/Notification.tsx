@@ -1,20 +1,11 @@
 import { Button } from 'antd';
-import Title from 'antd/es/typography/Title';
-
 const Notification = () => {
     return (
         <div className="mt-5">
             <div className="bg-white p-5 rounded-xl">
                 <div className="flex items-center justify-between my-4">
                     <div>
-                        <Title
-                            style={{
-                                color: '#2461CB',
-                            }}
-                            level={2}
-                        >
-                            Notification
-                        </Title>
+                        <h1 className="text-2xl font-semibold text-primary">Notification</h1>
                     </div>
                     <div className="flex items-center gap-4">
                         <Button
@@ -38,7 +29,7 @@ const Notification = () => {
                 <div>
                     {[1, 1, 1, 1, 1].map((_item: any, index: number) => {
                         return (
-                            <div key={index} className="w-full mx-auto p-4 my-4 bg-primary/10  min-h-20  shadow-md">
+                            <div key={index} className="w-full mx-auto p-4 my-4   min-h-20  shadow-md">
                                 <div className=" text-sm">
                                     <div className="flex items-center gap-5">
                                         <p className="font-semibold text-[#555555]">A new lesson has booked</p>

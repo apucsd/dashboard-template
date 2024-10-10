@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             { path: 'make-admin', element: <MakeAdmin /> }, // Add Admin
             { path: 'terms', element: <TermsCondition /> }, // Terms & Conditions
             { path: 'faqs', element: <FAQs /> }, // FAQs
-            { path: 'notifications', element: <Notification /> }, // Notifications
+            { path: 'notification', element: <Notification /> }, // Notifications
         ],
     },
     { path: '/login', element: <Login /> }, // Login

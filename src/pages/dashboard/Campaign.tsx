@@ -1,6 +1,7 @@
 import { Table, Input, Select } from 'antd';
 
 import { SearchOutlined } from '@ant-design/icons';
+import { AiOutlineDelete, AiOutlineEye } from 'react-icons/ai';
 const { Option } = Select;
 // Sample data
 const data = [
@@ -122,13 +123,13 @@ const columns = [
         title: 'Actions',
         key: 'action',
         render: () => (
-            <div>
-                <a href="#" className="text-blue-500">
-                    View
-                </a>
-                <a href="#" className="text-red-500 ml-2">
-                    Delete
-                </a>
+            <div className="flex items-center gap-3">
+                <button className="text-primary">
+                    <AiOutlineEye size={24} />
+                </button>
+                <button className="text-red-500">
+                    <AiOutlineDelete size={24} />
+                </button>
             </div>
         ),
     },

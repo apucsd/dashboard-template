@@ -1,12 +1,8 @@
 import { BsTrash } from 'react-icons/bs';
 import { Button, ConfigProvider, Flex, Form, Input, Popconfirm, Table } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import Title from 'antd/es/typography/Title';
 import { dummyData } from '../../constant/constant';
 import CustomModal from '../../components/shared/CustomModal';
 import { useState } from 'react';
-import { IoSaveSharp } from 'react-icons/io5';
-import PrimaryButton from '../../components/shared/PrimaryButton';
 
 const MakeAdmin = () => {
     const [makeAdminModal, setMakeAdminModal] = useState(false);

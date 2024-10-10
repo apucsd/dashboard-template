@@ -1,6 +1,9 @@
 import { Table, Dropdown, Input, Select } from 'antd';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { SearchOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import CustomModal from '../../components/shared/CustomModal';
+import InfluencerDetails from '../../components/ui/InfluencerDetails';
 const { Option } = Select;
 // Sample data
 const influencerData = [
@@ -61,72 +64,74 @@ const influencerData = [
 ];
 
 // Column definitions
-const columns = [
-    {
-        title: 'ID',
-        dataIndex: 'id',
-        key: 'id',
-    },
-    {
-        title: "Influencer's Name",
-        dataIndex: 'name',
-        key: 'name',
-    },
-    {
-        title: 'Email',
-        dataIndex: 'email',
-        key: 'email',
-    },
-    {
-        title: 'Campaign Status',
-        dataIndex: 'status',
-        key: 'status',
-        render: (status: string) => (
-            <span className={status === 'Active' ? 'text-green-500' : 'text-red-500'}>{status}</span>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_: any, record: any) => (
-            <Dropdown
-                menu={{
-                    items: [
-                        {
-                            key: 'view',
-                            label: <span onClick={() => handleAction('view', record)}>View</span>,
-                        },
-
-                        {
-                            key: 'disable',
-                            label: <span onClick={() => handleAction('disable', record)}>Disable User</span>,
-                        },
-                        {
-                            key: 'enable',
-                            label: <span onClick={() => handleAction('enable', record)}>Enable User</span>,
-                        },
-                        {
-                            key: 'remove',
-                            label: <span onClick={() => handleAction('remove', record)}>Remove</span>,
-                        },
-                    ],
-                }}
-                trigger={['click']}
-            >
-                <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-                    <BsThreeDotsVertical />
-                </a>
-            </Dropdown>
-        ),
-    },
-];
-
-const handleAction = (action: any, record: any) => {
-    console.log(action, record);
-    // Implement action handling logic here
-};
 
 const Influencer = () => {
+    const [showInfluencerDetails, setInfluencerDetails] = useState(false);
+
+    const columns = [
+        {
+            title: 'ID',
+            dataIndex: 'id',
+            key: 'id',
+        },
+        {
+            title: "Influencer's Name",
+            dataIndex: 'name',
+            key: 'name',
+        },
+        {
+            title: 'Email',
+            dataIndex: 'email',
+            key: 'email',
+        },
+        {
+            title: 'Campaign Status',
+            dataIndex: 'status',
+            key: 'status',
+            render: (status: string) => (
+                <span className={status === 'Active' ? 'text-green-500' : 'text-red-500'}>{status}</span>
+            ),
+        },
+        {
+            title: 'Action',
+            key: 'action',
+            render: (_: any, record: any) => (
+                <Dropdown
+                    menu={{
+                        items: [
+                            {
+                                key: 'view',
+                                label: <span onClick={() => setInfluencerDetails(true)}>View</span>,
+                            },
+
+                            {
+                                key: 'disable',
+                                label: <span onClick={() => handleAction('disable', record)}>Disable User</span>,
+                            },
+                            {
+                                key: 'enable',
+                                label: <span onClick={() => handleAction('enable', record)}>Enable User</span>,
+                            },
+                            {
+                                key: 'remove',
+                                label: <span onClick={() => handleAction('remove', record)}>Remove</span>,
+                            },
+                        ],
+                    }}
+                    trigger={['click']}
+                >
+                    <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+                        <BsThreeDotsVertical />
+                    </a>
+                </Dropdown>
+            ),
+        },
+    ];
+
+    const handleAction = (action: any, record: any) => {
+        console.log(action, record);
+        // Implement action handling logic here
+    };
     return (
         <div className="container mx-auto p-5">
             <div className="flex items-center gap-5 justify-end mb-5">
@@ -148,6 +153,13 @@ const Influencer = () => {
                 </Select>
             </div>
             <Table columns={columns} dataSource={influencerData} rowClassName="hover:bg-gray-100" />
+            <CustomModal
+                open={showInfluencerDetails}
+                setOpen={setInfluencerDetails}
+                body={<InfluencerDetails />}
+                key={'influencer-details'}
+                width={900}
+            />
         </div>
     );
 };
