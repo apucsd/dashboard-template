@@ -8,6 +8,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 
 const Categories = () => {
     const [categoryModal, setCategoryModal] = useState(false);
+    const [editCategoryModal, setEditCategoryModal] = useState(false);
     const categories = [
         { id: '01', name: 'Beauty & Fashion' },
         { id: '02', name: 'Health & Fitness' },
@@ -30,7 +31,7 @@ const Categories = () => {
             <Form.Item label="Category Name" name="name">
                 <Input
                     style={{
-                        height: '40px',
+                        height: 42,
                     }}
                     placeholder="Enter Category Name"
                 />
@@ -45,6 +46,36 @@ const Categories = () => {
                         }}
                     >
                         Add Category
+                    </Button>
+                </div>
+            </Form.Item>
+        </Form>
+    );
+    const editCategoryForm = (
+        <Form
+            style={{
+                color: '#767676',
+            }}
+            layout="vertical"
+        >
+            <Form.Item label="Category Name" name="name">
+                <Input
+                    style={{
+                        height: 42,
+                    }}
+                    placeholder="Enter Category Name"
+                />
+            </Form.Item>
+
+            <Form.Item>
+                <div className="flex justify-center w-full">
+                    <Button
+                        type="primary"
+                        style={{
+                            height: 40,
+                        }}
+                    >
+                        Edit Category
                     </Button>
                 </div>
             </Form.Item>
@@ -68,7 +99,7 @@ const Categories = () => {
             key: 'action',
             render: (_: any, _record: any, index: number) => (
                 <div key={index} className="flex items-center gap-3">
-                    <button>
+                    <button onClick={() => setEditCategoryModal(true)}>
                         <AiOutlineEdit className="text-xl text-primary" />
                     </button>
                     <button>
@@ -122,6 +153,13 @@ const Categories = () => {
                 title="Add Category"
                 width={500}
                 body={addCategoryForm}
+            />
+            <CustomModal
+                open={editCategoryModal}
+                setOpen={setEditCategoryModal}
+                title="Edit Category"
+                width={500}
+                body={editCategoryForm}
             />
         </div>
     );
