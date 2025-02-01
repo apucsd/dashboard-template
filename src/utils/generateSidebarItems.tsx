@@ -11,10 +11,32 @@ export type TSidebarItem = {
 };
 
 // Sidebar Generator for Ant Design Menu
-export const sidebarItemsGenerator = (items: TSidebarItem[]) => {
+export const sidebarItemsGenerator = (items: TSidebarItem[], handleLogout?: () => void) => {
     const sidebarItems = items.reduce((acc: TSidebarItem[], item) => {
-        // If the item has children, create a parent item with nested children
-        if (item.children && item.children.length > 0) {
+        if (item.key === '6') {
+            // Special case for "Log Out"
+            acc.push({
+                key: item.key,
+                icon: item.icon,
+                label: (
+                    <button
+                        onClick={handleLogout}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            padding: '8px 16px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            color: 'inherit',
+                            fontSize: 'inherit',
+                        }}
+                    >
+                        {item.label}
+                    </button>
+                ),
+            });
+        } else if (item.children && item.children.length > 0) {
             acc.push({
                 key: item.key,
                 icon: item.icon,
@@ -22,22 +44,14 @@ export const sidebarItemsGenerator = (items: TSidebarItem[]) => {
                 children: item.children.map((child) => ({
                     key: child.key,
                     icon: child.icon,
-                    label: (
-                        <>
-                            <NavLink to={`/${child.path}`}>{child.label}</NavLink>
-                        </>
-                    ),
+                    label: <NavLink to={`/${child.path}`}>{child.label}</NavLink>,
                 })),
             });
         } else if (item.label) {
             acc.push({
                 key: item.key,
                 icon: item.icon,
-                label: (
-                    <>
-                        <NavLink to={`/${item.path}`}>{item.label}</NavLink>
-                    </>
-                ),
+                label: <NavLink to={`/${item.path}`}>{item.label}</NavLink>,
             });
         }
 
