@@ -1,9 +1,8 @@
 import { BsTrash } from 'react-icons/bs';
-import { Button, ConfigProvider, Flex, Form, Input, Popconfirm, Table } from 'antd';
+import { Button, Flex, Popconfirm, Table } from 'antd';
 import { dummyData } from '../../constant/constant';
 import CustomModal from '../../components/shared/CustomModal';
 import { useState } from 'react';
-
 import CustomForm from '../../components/shared/CustomForm';
 import CustomInput from '../../components/shared/CustomInput';
 
@@ -88,19 +87,7 @@ const MakeAdmin = () => {
                 </div>
             </Flex>
 
-            <ConfigProvider
-                theme={{
-                    components: {
-                        Table: {
-                            headerBg: '#E9EFFA',
-                            headerBorderRadius: 0,
-                            rowHoverBg: '#F5F5F5',
-                        },
-                    },
-                }}
-            >
-                <Table columns={columns} dataSource={dummyData} />
-            </ConfigProvider>
+            <Table columns={columns} dataSource={dummyData} />
 
             <CustomModal
                 open={makeAdminModal}

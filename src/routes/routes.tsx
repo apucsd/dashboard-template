@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import Dashboard from '../pages/dashboard/dashboard/Dashboard';
-import MakeAdmin from '../pages/dashboard/MakeAdmin';
+import MakeAdmin from '../pages/admin/MakeAdmin';
 import Login from '../pages/authentication/Login';
 import Register from '../pages/authentication/Register';
 import ErrorPage from '../pages/error/ErrorPage';
-import TermsCondition from '../pages/dashboard/TermsCondition';
-import FAQs from '../pages/dashboard/FAQs';
-import Notification from '../pages/dashboard/Notification';
+import TermsCondition from '../pages/terms-and-conditions/TermsCondition';
+import FAQs from '../pages/faqs/FAQs';
+import Notification from '../pages/notifications/Notification';
 
 const router = createBrowserRouter([
     {

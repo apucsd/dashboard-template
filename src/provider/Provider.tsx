@@ -14,6 +14,11 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
                     Layout: {
                         headerBg: 'white',
                     },
+                    Table: {
+                        headerBg: '#E9EFFA',
+                        headerBorderRadius: 0,
+                        rowHoverBg: '#F5F5F5',
+                    },
                     Form: {
                         labelColor: '#333333',
                         marginLG: 16,
