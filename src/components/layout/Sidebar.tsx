@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 const Sidebar = () => {
+    const location = useLocation();
+    const activeKey = location.pathname === '/' ? 'overview' : location.pathname.split('/').filter(Boolean)[0];
     return (
         <ConfigProvider
             theme={{
@@ -54,7 +56,7 @@ const Sidebar = () => {
                     }
                     theme="light"
                     mode="inline"
-                    defaultSelectedKeys={['dashboard']}
+                    selectedKeys={[activeKey]}
                     items={sidebarItemsGenerator(sidebarItems)}
                 />
             </Sider>
