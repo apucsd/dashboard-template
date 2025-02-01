@@ -10,27 +10,16 @@ export type TSidebarItem = {
     children?: TSidebarItem[];
 };
 
-// Sidebar Generator for Ant Design Menu
 export const sidebarItemsGenerator = (items: TSidebarItem[], handleLogout?: () => void) => {
     const sidebarItems = items.reduce((acc: TSidebarItem[], item) => {
-        if (item.key === '6') {
-            // Special case for "Log Out"
+        if (item.key === 'logout') {
             acc.push({
                 key: item.key,
                 icon: item.icon,
                 label: (
                     <button
                         onClick={handleLogout}
-                        style={{
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            padding: '8px 16px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            color: 'inherit',
-                            fontSize: 'inherit',
-                        }}
+                        className="flex items-center p-2 bg-transparent border-none cursor-pointer text-inherit font-inherit"
                     >
                         {item.label}
                     </button>

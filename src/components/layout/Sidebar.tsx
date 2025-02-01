@@ -1,7 +1,7 @@
 import { ConfigProvider, Layout, Menu } from 'antd';
 import { sidebarItemsGenerator } from '../../utils/generateSidebarItems';
 import sidebarItems from '../../utils/sidebarItems';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const { Sider } = Layout;
 const Sidebar = () => {
